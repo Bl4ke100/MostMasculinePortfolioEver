@@ -1,0 +1,1981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Kawaii Portfolio ✨</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* === GLOBAL STYLES === */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&family=Quicksand:wght@400;700&display=swap');
+
+        :root {
+            --primary: #ff85a2;
+            --secondary: #ffa9c6;
+            --accent: #ffcbe0;
+            --text: #6b3e4e;
+            --light: #fff5f8;
+            --dark: #4a2c38;
+            --purple: #c792ea;
+            --blue: #89ddff;
+            --green: #c3e88d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--light);
+            color: var(--text);
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffcbe0' fill-opacity='0.25' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* === ANIMATED BACKGROUND === */
+        .background-decoration {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+            animation: twinkle 5s infinite;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            transform: rotate(45deg);
+            opacity: 0;
+            animation: float-up 15s linear infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: -10px;
+        }
+
+        /* === HEADER === */
+        .kawaii-header {
+            padding: 40px 20px 70px;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #ff9ac0, #ffb7dc);
+            color: white;
+            border-radius: 0 0 50% 50% / 30px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 25px rgba(255, 133, 162, 0.4);
+            overflow: hidden;
+        }
+
+        .header-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .cloud {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cloud-1 {
+            width: 100px;
+            height: 40px;
+            top: 20%;
+            left: 10%;
+            animation: float-cloud 8s ease-in-out infinite;
+        }
+
+        .cloud-2 {
+            width: 150px;
+            height: 60px;
+            top: 10%;
+            right: 15%;
+            animation: float-cloud 12s ease-in-out infinite reverse;
+        }
+
+        .cloud-3 {
+            width: 80px;
+            height: 30px;
+            top: 30%;
+            left: 40%;
+            animation: float-cloud 10s ease-in-out 2s infinite;
+        }
+
+        .cloud:before,
+        .cloud:after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+        }
+
+        .cloud-1:before {
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            left: 15px;
+        }
+
+        .cloud-1:after {
+            width: 50px;
+            height: 50px;
+            top: -20px;
+            right: 15px;
+        }
+
+        .cloud-2:before {
+            width: 90px;
+            height: 90px;
+            top: -45px;
+            left: 25px;
+        }
+
+        .cloud-2:after {
+            width: 70px;
+            height: 70px;
+            top: -30px;
+            right: 25px;
+        }
+
+        .cloud-3:before {
+            width: 45px;
+            height: 45px;
+            top: -25px;
+            left: 10px;
+        }
+
+        .cloud-3:after {
+            width: 40px;
+            height: 40px;
+            top: -20px;
+            right: 10px;
+        }
+
+        .star-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .sparkle-star {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+            z-index: 1;
+        }
+
+        .sparkle-star:before,
+        .sparkle-star:after {
+            content: '';
+            position: absolute;
+            background-color: #fff;
+        }
+
+        .sparkle-star:before {
+            width: 20px;
+            height: 4px;
+            top: 8px;
+            left: 0;
+            border-radius: 4px;
+        }
+
+        .sparkle-star:after {
+            width: 4px;
+            height: 20px;
+            top: 0;
+            left: 8px;
+            border-radius: 4px;
+        }
+
+        .star-1 {
+            top: 15%;
+            left: 20%;
+            transform: scale(0.6) rotate(25deg);
+            animation: twinkle-star 3s infinite 0.2s;
+        }
+
+        .star-2 {
+            top: 25%;
+            right: 25%;
+            transform: scale(0.8) rotate(10deg);
+            animation: twinkle-star 3s infinite 1s;
+        }
+
+        .star-3 {
+            bottom: 30%;
+            left: 35%;
+            transform: scale(0.7) rotate(45deg);
+            animation: twinkle-star 3s infinite 1.8s;
+        }
+
+        @keyframes twinkle-star {
+
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(0.6) rotate(25deg);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(0.8) rotate(25deg);
+            }
+        }
+
+        .profile-container {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+        }
+
+        .profile-frame {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 8px solid white;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
+            z-index: 2;
+            position: relative;
+        }
+
+        .cat-ears {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            width: 160px;
+        }
+
+        .ear {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background-color: #ff85a2;
+            border-radius: 50% 50% 0 0;
+            z-index: 1;
+        }
+
+        .ear:before {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 40px;
+            background-color: #ffcbe0;
+            border-radius: 50% 50% 0 0;
+            top: 10px;
+            left: 7px;
+        }
+
+        .ear-left {
+            transform: rotate(-15deg);
+            left: 15px;
+        }
+
+        .ear-right {
+            transform: rotate(15deg);
+            right: 15px;
+        }
+
+        .kawaii-bubble {
+            position: relative;
+            background-color: white;
+            padding: 20px 30px;
+            border-radius: 30px;
+            margin: 10px auto 25px;
+            max-width: 80%;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: pulse-subtle 3s ease-in-out infinite;
+        }
+
+        .kawaii-bubble:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 15px solid white;
+        }
+
+        .kawaii-bubble h1 {
+            color: var(--primary);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .kawaii-bubble p {
+            color: var(--text);
+            font-size: 1.2em;
+        }
+
+        .character-decor {
+            position: absolute;
+            bottom: -25px;
+            z-index: 3;
+        }
+
+        .character-left {
+            left: 5%;
+            transform: rotate(-5deg);
+        }
+
+        .character-right {
+            right: 5%;
+            transform: rotate(5deg);
+        }
+
+        .header-character {
+            animation: bounce 3s ease infinite;
+            filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 3;
+        }
+
+        .nav-item {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--primary);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-icon {
+            font-size: 1.2em;
+        }
+
+        .nav-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            background-color: var(--accent);
+        }
+
+        .header-bottom-decoration {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .scalloped-border {
+            height: 30px;
+            width: 100%;
+            background-image:
+                radial-gradient(circle at 10px -5px, transparent 12px, white 13px);
+            background-size: 20px 20px;
+            background-position: bottom;
+            background-repeat: repeat-x;
+        }
+
+        @keyframes float-cloud {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes pulse-subtle {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .typing-text {
+            display: inline-block;
+            font-weight: bold;
+            color: var(--accent);
+            position: relative;
+            min-width: 200px;
+            font-size: 1.1em;
+            height: 1.5em;
+            text-align: center;
+            vertical-align: middle;
+            overflow: hidden;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background-color: var(--accent);
+            margin-left: 2px;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+        }
+
+        /* === MAIN CONTENT === */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 5px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: calc(50% - 25px);
+            border-radius: 10px;
+        }
+
+        /* === ABOUT SECTION === */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            line-height: 1.6;
+        }
+
+        .anime-girl {
+            margin-bottom: 40px;
+            width: 200px;
+        }
+
+        /* === SKILLS SECTION === */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), var(--purple), var(--blue), var(--green));
+            background-size: 300% 300%;
+            animation: gradient 3s ease infinite;
+        }
+
+        .skill-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .skill-level {
+            width: 100%;
+            height: 10px;
+            background-color: var(--accent);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 5px;
+            transition: width 1s ease;
+        }
+
+        /* === PROJECTS SECTION === */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .project-desc {
+            margin-bottom: 15px;
+            line-height: 1.5;
+            font-size: 0.9em;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            background-color: var(--accent);
+            color: var(--text);
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background-color: var(--secondary);
+            transform: scale(1.05);
+        }
+
+        /* === CONTACT SECTION === */
+        .contact-container {
+            background-color: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-form {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid var(--accent);
+            border-radius: 10px;
+            font-family: 'Quicksand', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 133, 162, 0.3);
+        }
+
+        .contact-button {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(255, 133, 162, 0.4);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: flex-start;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) rotate(10deg);
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+        }
+
+        .footer-decoration {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .footer-heart {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            transform: rotate(45deg);
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+
+        .footer-heart:before,
+        .footer-heart:after {
+            content: '';
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .footer-heart:before {
+            top: -15px;
+            left: 0;
+        }
+
+        .footer-heart:after {
+            top: 0;
+            left: -15px;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) rotate(45deg) scale(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.2;
+            }
+
+            100% {
+                transform: translateY(-100px) rotate(45deg) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.2;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(45deg) scale(1.1);
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* === RESPONSIVE STYLES === */
+        @media (max-width: 768px) {
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .anime-girl {
+                width: 150px;
+            }
+
+            .typing-text {
+                min-width: 150px;
+                font-size: 1em;
+            }
+        }
+
+
+
+        /* === SOCIAL MEDIA SECTION === */
+        .social-media-container {
+            padding: 20px 0;
+        }
+
+        .social-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .social-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--purple), var(--blue), var(--green));
+            background-size: 300% 300%;
+            animation: gradient 3s ease infinite;
+        }
+
+        /* Platform specific accent colors */
+        .instagram::before {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .twitter::before {
+            background: #1DA1F2;
+        }
+
+        .github::before {
+            background: #333;
+        }
+
+        .twitch::before {
+            background: #9146FF;
+        }
+
+        .youtube::before {
+            background: #FF0000;
+        }
+
+        .tiktok::before {
+            background: #8b70b1;
+        }
+
+        .discord::before {
+            background: #7289DA;
+        }
+
+        .social-icon-large {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            color: var(--primary);
+            background-color: var(--accent);
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover .social-icon-large {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        /* Platform-specific icon colors */
+        .instagram .social-icon-large {
+            background: linear-gradient(45deg, rgba(240, 148, 51, 0.2), rgba(230, 104, 60, 0.2), rgba(220, 39, 67, 0.2), rgba(204, 35, 102, 0.2), rgba(188, 24, 136, 0.2));
+            color: #e1306c;
+        }
+
+        .twitter .social-icon-large {
+            background-color: rgba(29, 161, 242, 0.2);
+            color: #1DA1F2;
+        }
+
+        .github .social-icon-large {
+            background-color: rgba(51, 51, 51, 0.2);
+            color: #333;
+        }
+
+        .twitch .social-icon-large {
+            background-color: rgba(145, 70, 255, 0.2);
+            color: #9146FF;
+        }
+
+        .youtube .social-icon-large {
+            background-color: rgba(255, 0, 0, 0.2);
+            color: #FF0000;
+        }
+
+        .tiktok .social-icon-large {
+            background-color: #d17cd1;
+            color: #000000;
+        }
+
+        .discord .social-icon-large {
+            background-color: rgba(114, 137, 218, 0.2);
+            color: #7289DA;
+        }
+
+        .social-platform {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+
+        .social-username {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .social-description {
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .social-link-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+        }
+
+        .social-link-button:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 10px rgba(255, 133, 162, 0.4);
+        }
+
+        /* Platform-specific button styles */
+        .instagram .social-link-button {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+
+        .twitter .social-link-button {
+            background-color: #1DA1F2;
+        }
+
+        .github .social-link-button {
+            background-color: #333;
+        }
+
+        .twitch .social-link-button {
+            background-color: #9146FF;
+        }
+
+        .youtube .social-link-button {
+            background-color: #FF0000;
+        }
+
+        .tiktok .social-link-button {
+            background-color: #000000;
+        }
+
+        .discord .social-link-button {
+            background-color: #7289DA;
+        }
+
+        .social-stats {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .stat {
+            background-color: var(--light);
+            padding: 8px 15px;
+            border-radius: 15px;
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-value {
+            display: block;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.2em;
+        }
+
+        .stat-label {
+            font-size: 0.8em;
+            color: var(--text);
+        }
+
+        /* Add sparkle animations to social cards */
+        .social-card::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: transparent;
+            z-index: 1;
+            top: 15px;
+            right: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-card:hover::after {
+            opacity: 1;
+            animation: twinkle-star 2s infinite;
+        }
+
+        .social-card::after {
+            background-color: transparent;
+        }
+
+        .social-card:hover::after {
+            content: '';
+            position: absolute;
+        }
+
+        .social-card:hover::after,
+        .social-card:hover::before {
+            content: '';
+            position: absolute;
+            background-color: white;
+        }
+
+        .social-card:hover::after {
+            width: 15px;
+            height: 3px;
+            top: 20px;
+            right: 20px;
+            border-radius: 3px;
+        }
+
+        .social-card:hover::before {
+            height: 15px;
+            width: 3px;
+            top: 14px;
+            right: 26px;
+            border-radius: 3px;
+            z-index: 2;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .social-media-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-card {
+                padding: 20px;
+            }
+
+            .social-icon-large {
+                width: 60px;
+                height: 60px;
+                font-size: 2.2em;
+            }
+        }
+
+        /* Kawaii cursor */
+        * {
+            cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.828 24.586L5.414 17.172C4.633 16.391 4.633 15.133 5.414 14.352L14.352 5.414C15.133 4.633 16.391 4.633 17.172 5.414L26.11 14.352C26.891 15.133 26.891 16.391 26.11 17.172L17.172 26.11C16.391 26.891 15.133 26.891 14.352 26.11L12.828 24.586Z' fill='%23FF85A2'/%3E%3C/svg%3E"), auto;
+        }
+
+        a,
+        button {
+            cursor: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 26C21.5228 26 26 21.5228 26 16C26 10.4772 21.5228 6 16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26Z' fill='%23FFCBE0'/%3E%3Cpath d='M20 16C20 18.2091 18.2091 20 16 20C13.7909 20 12 18.2091 12 16C12 13.7909 13.7909 12 16 12C18.2091 12 20 13.7909 20 16Z' fill='%23FF85A2'/%3E%3C/svg%3E"), pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Decorations -->
+    <div class="background-decoration" id="background-decoration"></div>
+
+    <!-- Header Section -->
+    <!-- <header>
+        <img src="/api/placeholder/400/400" alt="Blake's Profile Picture" class="profile-pic">
+        <h1>✨ BLAKE's Portfolio ✨</h1>
+        <p>I am a <span class="typing-text" id="typing-text"></span><span class="cursor"></span></p>
+        
+        <nav class="nav-menu">
+            <a href="#about" class="nav-item">About Me</a>
+            <a href="#skills" class="nav-item">Skills</a>
+            <a href="#projects" class="nav-item">Projects</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </nav>
+    </header> -->
+
+    <!-- Super Cute Header Section -->
+    <header class="kawaii-header">
+        <div class="header-decoration">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+            <div class="star-container">
+                <div class="sparkle-star star-1"></div>
+                <div class="sparkle-star star-2"></div>
+                <div class="sparkle-star star-3"></div>
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <div class="profile-frame">
+                <img src="resources/pfp.png" alt="Blake's Profile Picture" class="profile-pic">
+                <div class="cat-ears">
+                    <div class="ear ear-left"></div>
+                    <div class="ear ear-right"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="kawaii-bubble">
+            <h1>✨ Im BLAKE ✨</h1>
+            <p><span class="typing-text" id="typing-text"></span><span class="cursor"></span></p>
+        </div>
+
+        <div class="character-decor character-left">
+            <img src="resources/AG5.png" alt="Cute Anime Girl" class="header-character">
+        </div>
+
+        <div class="character-decor character-right">
+            <img src="resources/AG4.png" alt="Cute Anime Girl" class="header-character">
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#about" class="nav-item">
+                About Me
+            </a>
+            <a href="#skills" class="nav-item">
+                Skills
+            </a>
+            <a href="#projects" class="nav-item">
+                Projects
+            </a>
+            <a href="#contact" class="nav-item">
+                Contact
+            </a>
+        </nav>
+
+        <div class="header-bottom-decoration">
+            <div class="scalloped-border"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hi there! I'm Blake, a passionate software engineering undergraduate with a love for creating
+                        beautiful and functional web experiences. When I'm not coding, you can find me immersed in the
+                        gaming world, editing photos and videos, or expressing myself through various art forms.</p>
+                    <p>I believe in bringing a unique blend of technical skills and creative vision to every project. My
+                        goal is to craft applications that are not only efficient and robust but also visually appealing
+                        and user-friendly.</p>
+                    <p>I'm constantly learning and exploring new technologies to expand my skill set. I enjoy tackling
+                        challenging problems and turning innovative ideas into reality through code.</p>
+                </div>
+                <!-- <img src="/api/placeholder/200/300" alt="Cute Anime Girl" class="anime-girl"> -->
+                <video class="anime-girl" width="240" autoplay loop muted>
+                    <source src="resources/0516.mp4" type="video/mp4" />
+                </video>
+
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <i class="fab fa-html5 skill-icon"></i>
+                    <h3 class="skill-name">HTML</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt skill-icon"></i>
+                    <h3 class="skill-name">CSS</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-js skill-icon"></i>
+                    <h3 class="skill-name">JavaScript</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-react skill-icon"></i>
+                    <h3 class="skill-name">React</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-java skill-icon"></i>
+                    <h3 class="skill-name">Java</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-php skill-icon"></i>
+                    <h3 class="skill-name">PHP</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-tailwind skill-icon"></i>
+                    <h3 class="skill-name">Tailwind</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-vuejs skill-icon"></i>
+                    <h3 class="skill-name">Nuxt</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fas fa-camera skill-icon"></i>
+                    <h3 class="skill-name">Photo Editing</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 90%;"></div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fas fa-video skill-icon"></i>
+                    <h3 class="skill-name">Video Editing</h3>
+                    <div class="skill-level">
+                        <div class="skill-progress" style="width: 85%;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="resources/P1.jpeg" alt="Project 1" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Project 1</h3>
+                        <p class="project-desc">A cute weather application that displays forecasts with anime-inspired
+                            visuals and animations.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">API</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="resources/P1.jpeg" alt="Project 2" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Project 2</h3>
+                        <p class="project-desc">A responsive blog dedicated to gaming reviews, tips, and news with
+                            custom comment system.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="resources/P1.jpeg" alt="Project 3" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Project 3</h3>
+                        <p class="project-desc">An interactive quiz app that helps users discover which anime character
+                            matches their personality.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Tailwind</span>
+                            <span class="project-tag">Firebase</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="resources/P1.jpeg" alt="Project 4" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Project 4</h3>
+                        <p class="project-desc">A gallery type of website to showcase my digital art and illustrations with
+                            dynamic filtering options.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML</span>
+                            <span class="project-tag">CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">PHP</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="resources/P1.jpeg" alt="Project 5" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Project 5</h3>
+                        <p class="project-desc">An interactive tool that allows users to create and customize their own
+                            anime-style game characters.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Canvas API</span>
+                            <span class="project-tag">HTML5</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="resources/P1.jpeg" alt="Project 6" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Project 6</h3>
+                        <p class="project-desc">A cute and fun task management application with rewards system and
+                            anime-inspired kawaii UI.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Nuxt</span>
+                            <span class="project-tag">Tailwind</span>
+                            <span class="project-tag">Vuex</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section id="social-media" class="section">
+            <h2 class="section-title">My Social Media</h2>
+            <div class="social-media-container">
+                <div class="social-media-grid">
+
+                    <!-- YouTube -->
+                    <div class="social-card youtube">
+                        <div class="social-icon-large">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3 class="social-platform">YouTube</h3>
+                        <p class="social-username">@BlakeXO</p>
+                        <p class="social-description">I make edits for Movies, TV Shows and stuff</p>
+                        <a href="https://www.youtube.com/@BlakeXO" class="social-link-button">
+                            <span>Subscribe</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="social-stats">
+                            <div class="stat">
+                                <span class="stat-value">138</span>
+                                <span class="stat-label">Videos</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4.5K</span>
+                                <span class="stat-label">Subscribers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GitHub -->
+                    <div class="social-card github">
+                        <div class="social-icon-large">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="social-platform">GitHub</h3>
+                        <p class="social-username">@Bl4ke100</p>
+                        <p class="social-description">Check out my open-source projects and contributions!</p>
+                        <a href="https://github.com/bl4ke100" class="social-link-button">
+                            <span>Follow Me</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="social-stats">
+                            <div class="stat">
+                                <span class="stat-value">10</span>
+                                <span class="stat-label">Repos</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">4</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                        </div>
+                    </div>
+
+                     <!-- TikTok/X -->
+                    <div class="social-card tiktok">
+                        <div class="social-icon-large">
+                            <i class="fab fa-tiktok"></i>
+                        </div>
+                        <h3 class="social-platform">TikTok</h3>
+                        <p class="social-username">@3l4ke</p>
+                        <p class="social-description">I make edits for Movies, TV Shows and stuff here too</p>
+                        <a href="https://www.tiktok.com/@3l4ke?is_from_webapp=1&sender_device=pc" class="social-link-button">
+                            <span>Follow Me</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="social-stats">
+                            <div class="stat">
+                                <span class="stat-value">1.2k</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">289.5K</span>
+                                <span class="stat-label">Likes</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Instagram
+                    <div class="social-card instagram">
+                        <div class="social-icon-large">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3 class="social-platform">Instagram</h3>
+                        <p class="social-username">@bl4ke.exe</p>
+                        <p class="social-description">Follow my daily adventures and creative photography!</p>
+                        <a href="https://instagram.com/bl4ke.exe" class="social-link-button">
+                            <span>Follow Me</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="social-stats">
+                            <div class="stat">
+                                <span class="stat-value">1.2k</span>
+                                <span class="stat-label">Posts</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">24.5k</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <!-- Twitter/X -->
+                    <!-- <div class="social-card twitter">
+                        <div class="social-icon-large">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <h3 class="social-platform">Twitter</h3>
+                        <p class="social-username">@bl4ke_dev</p>
+                        <p class="social-description">Tech thoughts, coding tips, and random musings!</p>
+                        <a href="https://twitter.com/bl4ke_dev" class="social-link-button">
+                            <span>Follow Me</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="social-stats">
+                            <div class="stat">
+                                <span class="stat-value">3.5k</span>
+                                <span class="stat-label">Tweets</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">12.8k</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                   
+
+                    
+
+                    <!-- Twitch -->
+                    <!-- <div class="social-card twitch">
+                        <div class="social-icon-large">
+                            <i class="fab fa-twitch"></i>
+                        </div>
+                        <h3 class="social-platform">Twitch</h3>
+                        <p class="social-username">bl4ke_gaming</p>
+                        <p class="social-description">Watch me stream games and coding sessions!</p>
+                        <a href="https://twitch.tv/bl4ke_gaming" class="social-link-button">
+                            <span>Subscribe</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="social-stats">
+                            <div class="stat">
+                                <span class="stat-value">48</span>
+                                <span class="stat-label">Streams</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">5.2k</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    
+
+                    <!-- Discord -->
+                    <!-- <div class="social-card discord">
+                        <div class="social-icon-large">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <h3 class="social-platform">Discord</h3>
+                        <p class="social-username">Blake's Kawaii Corner</p>
+                        <p class="social-description">Join my community for gaming, coding, and fun!</p>
+                        <a href="https://discord.gg/blakescorner" class="social-link-button">
+                            <span>Join Server</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <div class="social-stats">
+                            <div class="stat">
+                                <span class="stat-value">15</span>
+                                <span class="stat-label">Channels</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">2.3k</span>
+                                <span class="stat-label">Members</span>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Have a project in mind or just want to say hi? Feel free to drop me a message!</p>
+                    <p><i class="fas fa-envelope"></i> bl4ke100@email.com</p>
+                    <p><i class="fas fa-phone"></i> +9471 8738 028</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Gampaha, Sri Lanka</p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitch"></i></a>
+                    </div>
+
+                    <img src="resources/AG3.png" alt="">
+                </div>
+
+                <div class="contact-form">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="contact-button">Send Message <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-decoration">
+            <div class="footer-heart"></div>
+            <div class="footer-heart"></div>
+            <div class="footer-heart"></div>
+            <div class="footer-heart"></div>
+            <div class="footer-heart"></div>
+        </div>
+        <h2>✨ Thank You For Visiting ✨</h2>
+        <p>Let's create something amazing together!</p>
+        <p class="copyright">© 2025 Blake - All Rights Reserved</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Create background animations
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create stars
+            const backgroundDecoration = document.getElementById('background-decoration');
+
+            // Add stars
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.width = `${Math.random() * 3 + 1}px`;
+                star.style.height = star.style.width;
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                backgroundDecoration.appendChild(star);
+            }
+
+            // Add floating hearts
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.bottom = '-30px';
+                heart.style.opacity = Math.random() * 0.5 + 0.3;
+                heart.style.transform = `rotate(45deg) scale(${Math.random() * 0.5 + 0.5})`;
+                heart.style.animationDuration = `${Math.random() * 10 + 10}s`;
+                backgroundDecoration.appendChild(heart);
+
+                // Remove heart after animation completes
+                setTimeout(() => {
+                    heart.remove();
+                }, 15000);
+            }, 1000);
+
+            // Typing effect
+            const typingTextElement = document.getElementById('typing-text');
+            const texts = [
+                "Undergraduate Software Engineer",
+                "Passionate Gamer",
+                "Photo Editor",
+                "Video Editor",
+                "Digital Artist"
+            ];
+
+            let textIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let typingDelay = 100;
+
+            function typeText() {
+                const currentText = texts[textIndex];
+
+                if (isDeleting) {
+                    typingTextElement.textContent = currentText.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typingTextElement.textContent = currentText.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+
+                if (!isDeleting && charIndex === currentText.length) {
+                    isDeleting = true;
+                    typingDelay = 2000; // Pause at end of word
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    typingDelay = 500; // Pause before starting new word
+                } else {
+                    typingDelay = isDeleting ? 50 : 150;
+                }
+
+                setTimeout(typeText, typingDelay);
+            }
+
+            // Start typing animation
+            setTimeout(typeText, 1000);
+
+            // Reveal sections on scroll
+            const sections = document.querySelectorAll('.section');
+
+            function revealSection() {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (sectionTop < windowHeight - 100) {
+                        section.classList.add('visible');
+                    }
+                });
+            }
+
+            // Initial check for sections in view
+            revealSection();
+
+            // Check on scroll
+            window.addEventListener('scroll', revealSection);
+
+            // Animate skill bars
+            const skillBars = document.querySelectorAll('.skill-progress');
+
+            function animateSkillBars() {
+                skillBars.forEach(bar => {
+                    const barTop = bar.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+
+                    if (barTop < windowHeight - 50) {
+                        const width = bar.style.width;
+                        bar.style.width = '0';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+                    }
+                });
+            }
+
+            // Initial animation
+            setTimeout(animateSkillBars, 1000);
+
+            // Check on scroll
+            window.addEventListener('scroll', animateSkillBars);
+
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Form submission animation
+            const contactForm = document.getElementById('contact-form');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const submitButton = this.querySelector('.contact-button');
+                    const originalText = submitButton.innerHTML;
+
+                    submitButton.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
+                    submitButton.style.backgroundColor = '#c3e88d';
+
+                    // Reset form
+                    this.reset();
+
+                    // Reset button after delay
+                    setTimeout(() => {
+                        submitButton.innerHTML = originalText;
+                        submitButton.style.backgroundColor = '';
+                    }, 3000);
+                });
+            }
+
+            // Project card hover effect with anime girls appearing
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                card.addEventListener('mouseenter', function () {
+                    const animeGirl = document.createElement('img');
+                    animeGirl.src = 'resources/AG2.png';
+                    animeGirl.alt = 'Cute Anime Girl';
+                    animeGirl.style.position = 'absolute';
+                    animeGirl.style.bottom = '-40px';
+                    animeGirl.style.right = '-20px';
+                    animeGirl.style.zIndex = '10';
+                    animeGirl.style.transform = 'rotate(20deg)';
+                    animeGirl.style.transition = 'all 0.3s ease';
+                    animeGirl.style.animation = 'bounce 2s infinite';
+
+                    card.appendChild(animeGirl);
+                    card.style.overflow = 'visible';
+                });
+
+                card.addEventListener('mouseleave', function () {
+                    const animeGirl = card.querySelector('img[alt="Cute Anime Girl"]');
+                    if (animeGirl) {
+                        animeGirl.remove();
+                    }
+                    card.style.overflow = 'hidden';
+                });
+            });
+
+            // Add some sparkles on click
+            document.addEventListener('click', function (e) {
+                for (let i = 0; i < 5; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.classList.add('star');
+                    sparkle.style.left = `${e.pageX + (Math.random() * 40) - 20}px`;
+                    sparkle.style.top = `${e.pageY + (Math.random() * 40) - 20}px`;
+                    sparkle.style.width = `${Math.random() * 5 + 2}px`;
+                    sparkle.style.height = sparkle.style.width;
+                    sparkle.style.backgroundColor = `hsl(${Math.random() * 60 + 300}, 100%, 70%)`;
+                    sparkle.style.zIndex = '9999';
+                    sparkle.style.position = 'absolute';
+                    sparkle.style.borderRadius = '50%';
+                    sparkle.style.opacity = '0';
+                    sparkle.style.animation = 'twinkle 1s ease-out forwards';
+
+                    document.body.appendChild(sparkle);
+
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
